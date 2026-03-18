@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.sellbuygoldmine.com/sitemap.xml
-
-# Block sensitive paths
-Disallow: /private/
-Disallow: /admin/
