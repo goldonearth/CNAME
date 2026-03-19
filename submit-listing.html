@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Gold Mine for Sale | SellBuyGoldMine</title>
+    <meta name="description" content="Confidentially list your gold mine for sale. Your contact information is protected and only visible to verified buyers through our brokerage.">
+    <link rel="canonical" href="https://www.sellbuygoldmine.com/submit-listing">
+    
+    <style>
+        :root {
+            --gold-primary: #D4AF37; --gold-secondary: #B8962E;
+            --dark-bg: #0A0A0A; --dark-card: #141414;
+            --text-primary: #FFFFFF; --text-secondary: #B8B8B8;
+            --border-subtle: #2A2A2A;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
+        a { color: var(--gold-primary); text-decoration: none; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
+        .logo span { color: var(--text-primary); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--gold-primary); font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-card); flex-direction: column; padding: 1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+        
+        .container { max-width: 700px; margin: 0 auto; padding: 2rem 5%; margin-top: 80px; }
+        .page-header { text-align: center; margin-bottom: 2rem; }
+        .form-card { background: var(--dark-card); padding: 2rem; border: 1px solid var(--border-subtle); border-radius: 4px; margin: 2rem 0; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: var(--gold-primary); font-weight: 500; }
+        input, textarea, select { width: 100%; padding: 1rem; background: var(--dark-bg); border: 1px solid var(--border-subtle); color: var(--text-primary); border-radius: 2px; }
+        input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); }
+        .submit-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary)); color: var(--dark-bg); padding: 1rem 2rem; border: none; font-weight: 600; cursor: pointer; width: 100%; border-radius: 2px; }
+        .info-box { background: rgba(212,175,55,0.1); border-left: 3px solid var(--gold-primary); padding: 1.5rem; margin: 1.5rem 0; }
+        footer { padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border-subtle); color: var(--text-muted); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SELL<span>BUY</span>GOLDMINE.</div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="submit-listing.html">Sell</a>
+            <a href="buyer-request.html">Buy</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>List Your Gold Mine for Sale</h1>
+            <p style="color:var(--text-secondary)">Confidentially submit your mining asset for sale. Your contact information is protected and only visible to verified buyers through our brokerage.</p>
+        </div>
+        
+        <div class="info-box">
+            <strong>🔒 Your Privacy is Protected:</strong><br>
+            • Your email and phone are NEVER shown publicly<br>
+            • Only SellBuyGoldMine sees your full contact details<br>
+            • We vet all buyers before sharing your information<br>
+            • You approve each buyer introduction
+        </div>
+        
+        <div class="form-card">
+            <form action="https://formspree.io/f/xeerlbyr" method="POST">
+                <input type="hidden" name="form_type" value="seller_listing">
+                
+                <div class="form-group">
+                    <label>Mine/Property Name *</label>
+                    <input type="text" name="mine_name" placeholder="e.g., Silver Creek Gold Mine" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Location (Country, State/Province) *</label>
+                    <input type="text" name="location" placeholder="e.g., Nevada, USA" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Property Size (Acres/Hectares)</label>
+                    <input type="text" name="property_size" placeholder="e.g., 500 acres">
+                </div>
+                
+                <div class="form-group">
+                    <label>Asking Price (USD) *</label>
+                    <input type="text" name="asking_price" placeholder="e.g., $5,000,000 or 'Negotiable'" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Production Status *</label>
+                    <select name="production_status" required>
+                        <option value="">Select...</option>
+                        <option value="Producing">Currently Producing</option>
+                        <option value="Development">In Development</option>
+                        <option value="Exploration">Exploration Stage</option>
+                        <option value="Idle">Idle/Care & Maintenance</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gold Reserves (if known)</label>
+                    <input type="text" name="reserves" placeholder="e.g., 50,000 oz proven">
+                </div>
+                
+                <div class="form-group">
+                    <label>Detailed Description *</label>
+                    <textarea name="description" rows="6" placeholder="Describe geology, infrastructure, permits, equipment, production history, etc." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" name="owner_name" placeholder="Full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Email (Private - Not Published) *</label>
+                    <input type="email" name="owner_email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Phone (Private - Not Published)</label>
+                    <input type="tel" name="owner_phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Supporting Documents</label>
+                    <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.5rem">Do NOT upload sensitive documents here. We will request them after initial review.</p>
+                    <textarea name="documents" rows="3" placeholder="List any available reports (assays, NI 43-101, permits, etc.)"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display:flex;align-items:center;gap:0.5rem">
+                        <input type="checkbox" name="terms" required style="width:auto">
+                        I confirm I have legal authority to sell this property and agree to SellBuyGoldMine's terms
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Listing for Review</button>
+                
+                <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-secondary)">⏱️ Our team reviews all submissions within 48 hours. You will receive a confirmation email once your listing is approved.</p>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>www.sellbuygoldmine.com | Email: <a href="mailto:goldonearth@proton.me">goldonearth@proton.me</a></p>
+        <p style="margin-top:0.5rem;opacity:0.6;font-size:0.75rem">© 2026 SellBuyGoldMine. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

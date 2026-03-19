@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Inquiry | Gold Mine Investment Opportunities | SellBuyGoldMine</title>
+    <meta name="description" content="Qualified buyers can request information about gold mine listings. All inquiries confidential and vetted before seller introduction.">
+    <link rel="canonical" href="https://www.sellbuygoldmine.com/buyer-request">
+    
+    <style>
+        :root {
+            --gold-primary: #D4AF37; --gold-secondary: #B8962E;
+            --dark-bg: #0A0A0A; --dark-card: #141414;
+            --text-primary: #FFFFFF; --text-secondary: #B8B8B8;
+            --border-subtle: #2A2A2A;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
+        a { color: var(--gold-primary); text-decoration: none; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
+        .logo span { color: var(--text-primary); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--gold-primary); font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-card); flex-direction: column; padding: 1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+        
+        .container { max-width: 700px; margin: 0 auto; padding: 2rem 5%; margin-top: 80px; }
+        .page-header { text-align: center; margin-bottom: 2rem; }
+        .form-card { background: var(--dark-card); padding: 2rem; border: 1px solid var(--border-subtle); border-radius: 4px; margin: 2rem 0; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: var(--gold-primary); font-weight: 500; }
+        input, textarea, select { width: 100%; padding: 1rem; background: var(--dark-bg); border: 1px solid var(--border-subtle); color: var(--text-primary); border-radius: 2px; }
+        input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); }
+        .submit-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary)); color: var(--dark-bg); padding: 1rem 2rem; border: none; font-weight: 600; cursor: pointer; width: 100%; border-radius: 2px; }
+        .info-box { background: rgba(212,175,55,0.1); border-left: 3px solid var(--gold-primary); padding: 1.5rem; margin: 1.5rem 0; }
+        .requirements { background: var(--dark-elevated); padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; }
+        .requirements h3 { color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.1rem; }
+        .requirements ul { margin-left: 1.5rem; color: var(--text-secondary); }
+        .requirements li { margin-bottom: 0.5rem; }
+        footer { padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border-subtle); color: var(--text-muted); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SELL<span>BUY</span>GOLDMINE.</div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="submit-listing.html">Sell</a>
+            <a href="buyer-request.html">Buy</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>Buyer Inquiry Form</h1>
+            <p style="color:var(--text-secondary)">Request information about specific listings or general investment opportunities. All inquiries are confidential and vetted before seller introduction.</p>
+        </div>
+        
+        <div class="info-box">
+            <strong>🔐 Buyer Qualification Required:</strong><br>
+            • Proof of funds or financing commitment<br>
+            • NCNDA must be signed before detailed information shared<br>
+            • All buyers vetted before seller contact<br>
+            • Typical response time: 24-48 hours
+        </div>
+        
+        <div class="requirements">
+            <h3>📋 Buyer Requirements</h3>
+            <ul>
+                <li>Minimum investment capacity: $5M USD</li>
+                <li>Proof of funds or bank comfort letter</li>
+                <li>Previous mining investment experience (preferred)</li>
+                <li>Legal entity documentation (corporate buyers)</li>
+                <li>AML/KYC compliance documentation</li>
+            </ul>
+        </div>
+        
+        <div class="form-card">
+            <form action="https://formspree.io/f/xeerlbyr" method="POST">
+                <input type="hidden" name="form_type" value="buyer_inquiry">
+                
+                <div class="form-group">
+                    <label>Listing Reference (if applicable)</label>
+                    <input type="text" name="listing_ref" placeholder="e.g., L-2026-001" id="listingRef">
+                    <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem">Leave blank for general inquiries</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Investment Type *</label>
+                    <select name="investment_type" required>
+                        <option value="">Select...</option>
+                        <option value="producing">Producing Mine Acquisition</option>
+                        <option value="development">Development Project</option>
+                        <option value="exploration">Exploration Property</option>
+                        <option value="portfolio">Portfolio Acquisition</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Investment Range (USD) *</label>
+                    <select name="investment_range" required>
+                        <option value="">Select...</option>
+                        <option value="5M-25M">$5M - $25M</option>
+                        <option value="25M-100M">$25M - $100M</option>
+                        <option value="100M-500M">$100M - $500M</option>
+                        <option value="500M+">$500M+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Regions</label>
+                    <select name="preferred_region">
+                        <option value="">Any Region</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="africa">Africa</option>
+                        <option value="south-america">South America</option>
+                        <option value="australia">Australia</option>
+                        <option value="multiple">Multiple Regions</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" name="buyer_name" placeholder="Full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Company/Organization</label>
+                    <input type="text" name="company" placeholder="Company name (if applicable)">
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Email (Private) *</label>
+                    <input type="email" name="buyer_email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Phone (Private)</label>
+                    <input type="tel" name="buyer_phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Investment Experience *</label>
+                    <textarea name="experience" rows="4" placeholder="Briefly describe your mining investment experience and background" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Additional Requirements or Questions</label>
+                    <textarea name="questions" rows="3" placeholder="Specific criteria, timeline, or questions"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display:flex;align-items:center;gap:0.5rem">
+                        <input type="checkbox" name="ncnda" required style="width:auto">
+                        I agree to sign an NCNDA before receiving confidential information
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display:flex;align-items:center;gap:0.5rem">
+                        <input type="checkbox" name="pof" required style="width:auto">
+                        I can provide proof of funds upon request
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Buyer Inquiry</button>
+                
+                <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-secondary)">⏱️ Our team reviews all buyer inquiries within 24-48 hours. Qualified buyers will be contacted to schedule a consultation.</p>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>www.sellbuygoldmine.com | Email: <a href="mailto:goldonearth@proton.me">goldonearth@proton.me</a></p>
+        <p style="margin-top:0.5rem;opacity:0.6;font-size:0.75rem">© 2026 SellBuyGoldMine. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        // Auto-fill listing reference from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const listingParam = urlParams.get('listing');
+        if (listingParam) {
+            document.getElementById('listingRef').value = listingParam;
+        }
+    </script>
+</body>
+</html>

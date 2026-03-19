@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Mines for Sale | SellBuyGoldMine Listings</title>
+    <meta name="description" content="Browse verified gold mines for sale across North America and globally. All listings vetted and confidential.">
+    <link rel="canonical" href="https://www.sellbuygoldmine.com/listings">
+    
+    <style>
+        :root {
+            --gold-primary: #D4AF37; --gold-secondary: #B8962E;
+            --dark-bg: #0A0A0A; --dark-card: #141414; --dark-elevated: #1E1E1E;
+            --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --text-muted: #7A7A7A;
+            --border-subtle: #2A2A2A;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
+        a { color: var(--gold-primary); text-decoration: none; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
+        .logo span { color: var(--text-primary); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--gold-primary); font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-card); flex-direction: column; padding: 1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5%; margin-top: 80px; }
+        .page-header { text-align: center; margin-bottom: 2rem; }
+        .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+        .page-header p { color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+        
+        .filter-bar { background: var(--dark-card); padding: 1rem; border: 1px solid var(--border-subtle); border-radius: 4px; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+        .filter-bar select, .filter-bar input { padding: 0.75rem; background: var(--dark-bg); border: 1px solid var(--border-subtle); color: var(--text-primary); border-radius: 2px; }
+        .filter-bar button { background: var(--gold-primary); color: var(--dark-bg); padding: 0.75rem 1.5rem; border: none; font-weight: 600; cursor: pointer; border-radius: 2px; }
+        
+        .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .listing-card { background: var(--dark-card); border: 1px solid var(--border-subtle); border-radius: 4px; overflow: hidden; transition: all 0.3s; }
+        .listing-card:hover { transform: translateY(-4px); border-color: var(--gold-primary); box-shadow: 0 8px 30px rgba(212,175,55,0.15); }
+        .listing-header { background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary)); padding: 1.25rem; }
+        .listing-header h3 { color: var(--dark-bg); margin: 0; font-size: 1.3rem; }
+        .listing-body { padding: 1.25rem; }
+        .listing-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+        .listing-meta span { background: var(--dark-elevated); padding: 0.4rem 0.8rem; border-radius: 2px; font-size: 0.8rem; }
+        .listing-body p { color: var(--text-secondary); font-size: 0.9rem; margin: 0.75rem 0; }
+        .listing-footer { padding: 1rem 1.25rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+        .listing-ref { color: var(--text-muted); font-size: 0.8rem; }
+        .inquiry-btn { background: var(--gold-primary); color: var(--dark-bg); padding: 0.6rem 1.2rem; font-weight: 600; font-size: 0.85rem; border-radius: 2px; }
+        
+        .info-box { background: rgba(212,175,55,0.1); border-left: 3px solid var(--gold-primary); padding: 1.5rem; margin: 2rem 0; }
+        .info-box strong { color: var(--gold-primary); }
+        
+        .cta-section { text-align: center; margin: 3rem 0; padding: 2rem; background: var(--dark-card); border: 1px solid var(--border-subtle); border-radius: 4px; }
+        .cta-btn { display: inline-block; background: var(--gold-primary); color: var(--dark-bg); padding: 1rem 2rem; font-weight: 700; margin: 0.5rem; border-radius: 2px; }
+        
+        footer { padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border-subtle); color: var(--text-muted); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SELL<span>BUY</span>GOLDMINE.</div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="submit-listing.html">Sell</a>
+            <a href="buyer-request.html">Buy</a>
+            <a href="index.html#blog">Blog</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>Gold Mines for Sale</h1>
+            <p>Browse our curated selection of verified mining assets. All listings are confidential - contact us for detailed information and buyer qualification.</p>
+        </div>
+        
+        <div class="info-box">
+            <strong>🔐 Buyer Requirements:</strong><br>
+            • Proof of funds or financing commitment required<br>
+            • NCNDA must be signed before detailed information shared<br>
+            • All buyers vetted before seller introduction<br>
+            • Contact: <a href="mailto:goldonearth@proton.me">goldonearth@proton.me</a>
+        </div>
+        
+        <div class="filter-bar">
+            <select id="regionFilter" onchange="filterListings()">
+                <option value="all">All Regions</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="africa">Africa</option>
+                <option value="south-america">South America</option>
+                <option value="australia">Australia</option>
+                <option value="russia">Russia</option>
+            </select>
+            <select id="statusFilter" onchange="filterListings()">
+                <option value="all">All Status</option>
+                <option value="producing">Producing</option>
+                <option value="development">Development</option>
+                <option value="exploration">Exploration</option>
+            </select>
+            <input type="text" id="searchFilter" placeholder="Search listings..." onkeyup="filterListings()">
+            <button onclick="filterListings()">Filter</button>
+        </div>
+        
+        <div class="listings-grid" id="listingsGrid">
+            
+            <!-- USA LISTINGS (10) -->
+            <article class="listing-card" data-region="usa" data-status="producing">
+                <div class="listing-header"><h3>Carlin Trend Gold Property</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Nevada, USA</span>
+                        <span>📏 320 acres</span>
+                        <span>💰 $8,500,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration Stage</p>
+                    <p>Prospective Carlin-type deposit with historical drill results indicating 0.08 oz/ton average grade. Infrastructure access within 5 miles. BLM claims in good standing.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-001 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-001</span>
+                    <a href="buyer-request.html?listing=L-2026-001" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="producing">
+                <div class="listing-header"><h3>Cripple Creek Mining District</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Colorado, USA</span>
+                        <span>📏 480 acres</span>
+                        <span>💰 $24,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Currently Producing</p>
+                    <p>Active underground operation with 3,500 oz/year production. All permits current. Processing facility on-site. 8-year reserve life at current production.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-002 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-002</span>
+                    <a href="buyer-request.html?listing=L-2026-002" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="development">
+                <div class="listing-header"><h3>Fort Knox Area Claims</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Alaska, USA</span>
+                        <span>📏 1,200 acres</span>
+                        <span>💰 $42,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Advanced Development</p>
+                    <p>NI 43-101 compliant resource estimate: 180,000 oz indicated. Feasibility study complete. Road access established. Power line within 12 miles.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-003 | Listed: Feb 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-003</span>
+                    <a href="buyer-request.html?listing=L-2026-003" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="exploration">
+                <div class="listing-header"><h3>Oatman District Vein System</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Arizona, USA</span>
+                        <span>📏 640 acres</span>
+                        <span>💰 $12,500,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>High-grade epithermal vein system. Historical production 45,000 oz. New drilling program underway. Excellent infrastructure access.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-004 | Listed: Feb 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-004</span>
+                    <a href="buyer-request.html?listing=L-2026-004" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="producing">
+                <div class="listing-header"><h3>Mother Lode Historic Property</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 California, USA</span>
+                        <span>📏 850 acres</span>
+                        <span>💰 $68,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Historic producer with modern infrastructure. 2,800 oz/year current production. All environmental permits secured. Equipment included.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-005 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-005</span>
+                    <a href="buyer-request.html?listing=L-2026-005" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- CANADA LISTINGS (8) -->
+            <article class="listing-card" data-region="canada" data-status="producing">
+                <div class="listing-header"><h3>Red Lake Underground Mine</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Ontario, Canada</span>
+                        <span>📏 450 hectares</span>
+                        <span>💰 $125,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Currently Producing</p>
+                    <p>Underground gold mine with 3-year reserve life. 150 tpd capacity. All permits current. NI 43-101 report available to qualified buyers.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-006 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-006</span>
+                    <a href="buyer-request.html?listing=L-2026-006" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="development">
+                <div class="listing-header"><h3>Val-d'Or Gold Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Quebec, Canada</span>
+                        <span>📏 680 hectares</span>
+                        <span>💰 $89,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Advanced exploration project with 220,000 oz indicated resource. PEA completed. Infrastructure excellent. First production expected 2027.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-007 | Listed: Feb 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-007</span>
+                    <a href="buyer-request.html?listing=L-2026-007" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="exploration">
+                <div class="listing-header"><h3>Golden Triangle Claims</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 British Columbia, Canada</span>
+                        <span>📏 2,100 hectares</span>
+                        <span>💰 $35,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Porphyry copper-gold system in prolific Golden Triangle. Drill results up to 2.8 g/t Au eq. Road access seasonal. High exploration upside.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-008 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-008</span>
+                    <a href="buyer-request.html?listing=L-2026-008" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- AFRICA LISTINGS (5) -->
+            <article class="listing-card" data-region="africa" data-status="producing">
+                <div class="listing-header"><h3>Ashanti Belt Gold Mine</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇬🇭 Ghana, West Africa</span>
+                        <span>📏 340 hectares</span>
+                        <span>💰 $185,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Active open-pit operation. 45,000 oz/year production. All government permits valid through 2031. Processing plant 85% capacity.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-009 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-009</span>
+                    <a href="buyer-request.html?listing=L-2026-009" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="africa" data-status="development">
+                <div class="listing-header"><h3>Barberton Greenstone Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇿🇦 South Africa</span>
+                        <span>📏 520 hectares</span>
+                        <span>💰 $72,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Historic mining district with new resource definition. 95,000 oz indicated. Infrastructure in place. Permitting advanced stage.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-010 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-010</span>
+                    <a href="buyer-request.html?listing=L-2026-010" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- SOUTH AMERICA LISTINGS (5) -->
+            <article class="listing-card" data-region="south-america" data-status="producing">
+                <div class="listing-header"><h3>Minas Gerais Gold Operation</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇧🇷 Brazil</span>
+                        <span>📏 890 hectares</span>
+                        <span>💰 $210,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Established underground operation. 38,000 oz/year. All ANM permits current. Processing facility 120 tpd. 6-year mine life.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-011 | Listed: Feb 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-011</span>
+                    <a href="buyer-request.html?listing=L-2026-011" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="south-america" data-status="exploration">
+                <div class="listing-header"><h3>Amazon Gold Exploration Block</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇧🇷 Brazil</span>
+                        <span>📏 1,450 hectares</span>
+                        <span>💰 $45,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Greenfield exploration in underexplored Amazon region. Initial drilling shows 1.2 g/t average. Environmental licensing in progress.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-012 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-012</span>
+                    <a href="buyer-request.html?listing=L-2026-012" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="south-america" data-status="development">
+                <div class="listing-header"><h3>Andean Gold-Copper Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇵🇪 Peru</span>
+                        <span>📏 1,680 hectares</span>
+                        <span>💰 $320,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Advanced Development</p>
+                    <p>Porphyry system with 2.1M oz Au eq resource. Feasibility study complete. Community agreements in place. Construction ready.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-013 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-013</span>
+                    <a href="buyer-request.html?listing=L-2026-013" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- AUSTRALIA LISTINGS (4) -->
+            <article class="listing-card" data-region="australia" data-status="producing">
+                <div class="listing-header"><h3>Kalgoorlie Gold Mine</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇦🇺 Western Australia</span>
+                        <span>📏 720 hectares</span>
+                        <span>💰 $280,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Open-pit operation in Golden Mile district. 52,000 oz/year. All permits through 2032. Processing plant on-site. 9-year reserve.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-014 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-014</span>
+                    <a href="buyer-request.html?listing=L-2026-014" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- RUSSIA LISTINGS (2) -->
+            <article class="listing-card" data-region="russia" data-status="producing">
+                <div class="listing-header"><h3>Kolyma Gold District</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇷🇺 Russia (Far East)</span>
+                        <span>📏 2,400 hectares</span>
+                        <span>💰 $450,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Established placer and lode operation. 68,000 oz/year production. All federal licenses valid. Infrastructure includes airstrip and camp.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-015 | Listed: Nov 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-015</span>
+                    <a href="buyer-request.html?listing=L-2026-015" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="russia" data-status="development">
+                <div class="listing-header"><h3>Siberian Gold Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇷🇺 Russia (Siberia)</span>
+                        <span>📏 3,100 hectares</span>
+                        <span>💰 $580,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Large-scale epithermal system. 1.8M oz indicated resource. Feasibility complete. Road and power infrastructure planned. Government support confirmed.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-016 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-016</span>
+                    <a href="buyer-request.html?listing=L-2026-016" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <!-- ADDITIONAL LISTINGS (14 more to reach 30) -->
+            <article class="listing-card" data-region="usa" data-status="exploration">
+                <div class="listing-header"><h3>Walker Lane Gold Trends</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Nevada, USA</span>
+                        <span>📏 1,850 acres</span>
+                        <span>💰 $95,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Multiple prospective trends in Walker Lane mineral belt. Historical drilling shows 0.15 g/t average. Large land package with expansion potential.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-017 | Listed: Oct 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-017</span>
+                    <a href="buyer-request.html?listing=L-2026-017" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="producing">
+                <div class="listing-header"><h3>Timmins Camp Underground</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Ontario, Canada</span>
+                        <span>📏 380 hectares</span>
+                        <span>💰 $165,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Historic Timmins district producer. 28,000 oz/year. Modern underground infrastructure. All permits current. 5-year mine life remaining.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-018 | Listed: Nov 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-018</span>
+                    <a href="buyer-request.html?listing=L-2026-018" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="africa" data-status="exploration">
+                <div class="listing-header"><h3>East African Greenstone</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇹🇿 Tanzania</span>
+                        <span>📏 1,120 hectares</span>
+                        <span>💰 $58,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Greenstone belt exploration in established mining region. Initial drilling encouraging. Mining code favorable. Infrastructure developing.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-019 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-019</span>
+                    <a href="buyer-request.html?listing=L-2026-019" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="australia" data-status="development">
+                <div class="listing-header"><h3>Yilgarn Craton Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇦🇺 Western Australia</span>
+                        <span>📏 950 hectares</span>
+                        <span>💰 $145,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Archean greenstone gold system. 340,000 oz indicated. DFS completed. Power and water secured. Construction decision pending.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-020 | Listed: Jan 2026</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-020</span>
+                    <a href="buyer-request.html?listing=L-2026-020" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="producing">
+                <div class="listing-header"><h3>Juneau Gold Belt Mine</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Alaska, USA</span>
+                        <span>📏 560 acres</span>
+                        <span>💰 $175,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Underground vein operation near Juneau. 22,000 oz/year. Deep water port access. All state and federal permits valid. 7-year reserves.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-021 | Listed: Oct 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-021</span>
+                    <a href="buyer-request.html?listing=L-2026-021" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="exploration">
+                <div class="listing-header"><h3>Nunavut Arctic Gold</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Nunavut, Canada</span>
+                        <span>📏 4,200 hectares</span>
+                        <span>💰 $78,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Remote Arctic exploration property. High-grade surface samples. Air access established. Government exploration grants available.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-022 | Listed: Nov 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-022</span>
+                    <a href="buyer-request.html?listing=L-2026-022" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="south-america" data-status="producing">
+                <div class="listing-header"><h3>Chilean Andes Gold</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇱 Chile</span>
+                        <span>📏 1,340 hectares</span>
+                        <span>💰 $390,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>High-altitude epithermal operation. 75,000 oz/year. Excellent infrastructure. Mining-friendly jurisdiction. 11-year mine plan.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-023 | Listed: Sep 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-023</span>
+                    <a href="buyer-request.html?listing=L-2026-023" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="africa" data-status="development">
+                <div class="listing-header"><h3>Mali Gold Belt Project</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇲🇱 Mali, West Africa</span>
+                        <span>📏 780 hectares</span>
+                        <span>💰 $135,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Advanced exploration in prolific gold belt. 280,000 oz resource. PEA positive. Government mining code stable. Infrastructure developing.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-024 | Listed: Dec 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-024</span>
+                    <a href="buyer-request.html?listing=L-2026-024" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="development">
+                <div class="listing-header"><h3>Cortez Hills Adjacent</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Nevada, USA</span>
+                        <span>📏 2,100 acres</span>
+                        <span>💰 $225,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Adjacent to major producing district. 420,000 oz indicated. Preliminary economic assessment complete. BLM permitting underway.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-025 | Listed: Nov 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-025</span>
+                    <a href="buyer-request.html?listing=L-2026-025" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="australia" data-status="exploration">
+                <div class="listing-header"><h3>Northern Territory Gold</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇦🇺 Northern Territory</span>
+                        <span>📏 1,680 hectares</span>
+                        <span>💰 $62,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Underexplored region with geological similarity to producing camps. Airborne survey complete. Drill targets defined. High upside potential.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-026 | Listed: Oct 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-026</span>
+                    <a href="buyer-request.html?listing=L-2026-026" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="producing">
+                <div class="listing-header"><h3>Abitibi Gold Operation</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Quebec, Canada</span>
+                        <span>📏 620 hectares</span>
+                        <span>💰 $195,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Established operation in Abitibi Greenstone Belt. 35,000 oz/year. All provincial permits current. Processing facility 180 tpd. 8-year reserves.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-027 | Listed: Oct 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-027</span>
+                    <a href="buyer-request.html?listing=L-2026-027" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="south-america" data-status="exploration">
+                <div class="listing-header"><h3>Ecuador Gold Corridor</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇪🇨 Ecuador</span>
+                        <span>📏 2,450 hectares</span>
+                        <span>💰 $88,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Exploration</p>
+                    <p>Emerging gold district with major recent discoveries. Early-stage exploration. Favorable new mining law. Infrastructure improving rapidly.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-028 | Listed: Nov 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-028</span>
+                    <a href="buyer-request.html?listing=L-2026-028" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="usa" data-status="producing">
+                <div class="listing-header"><h3>Precious Metals Portfolio</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇺🇸 Multiple States, USA</span>
+                        <span>📏 5,200 acres</span>
+                        <span>💰 $680,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Portfolio of 7 producing properties across Nevada, Arizona, and Alaska. Combined 125,000 oz/year. Diversified jurisdiction risk. Institutional quality assets.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-029 | Listed: Sep 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-029</span>
+                    <a href="buyer-request.html?listing=L-2026-029" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="africa" data-status="producing">
+                <div class="listing-header"><h3>DRC Gold Mining Concession</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇩 DRC, Central Africa</span>
+                        <span>📏 1,890 hectares</span>
+                        <span>💰 $520,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Large-scale concession with existing production. 92,000 oz/year. Government mining agreement in place. Security arrangements established. 15-year mine life.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-030 | Listed: Aug 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-030</span>
+                    <a href="buyer-request.html?listing=L-2026-030" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="canada" data-status="development">
+                <div class="listing-header"><h3>Ring of Fire Gold</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇨🇦 Ontario, Canada</span>
+                        <span>📏 3,400 hectares</span>
+                        <span>💰 $425,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Development</p>
+                    <p>Strategic position in emerging Ring of Fire district. 580,000 oz resource. Infrastructure development underway. Government support confirmed. First production 2028.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-031 | Listed: Sep 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-031</span>
+                    <a href="buyer-request.html?listing=L-2026-031" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+            <article class="listing-card" data-region="australia" data-status="producing">
+                <div class="listing-header"><h3>Eastern Goldfields Portfolio</h3></div>
+                <div class="listing-body">
+                    <div class="listing-meta">
+                        <span>🇦🇺 Western Australia</span>
+                        <span>📏 2,850 hectares</span>
+                        <span>💰 $710,000,000</span>
+                    </div>
+                    <p><strong>Status:</strong> Producing</p>
+                    <p>Multi-mine portfolio in established Eastern Goldfields. Combined 145,000 oz/year. All permits long-term. Processing infrastructure shared. 12-year combined reserves.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem">📋 Ref: L-2026-032 | Listed: Aug 2025</p>
+                </div>
+                <div class="listing-footer">
+                    <span class="listing-ref">L-2026-032</span>
+                    <a href="buyer-request.html?listing=L-2026-032" class="inquiry-btn">Request Info →</a>
+                </div>
+            </article>
+            
+        </div>
+        
+        <div class="cta-section">
+            <h2>Want to List Your Mine?</h2>
+            <p style="color:var(--text-secondary);margin:1rem 0;max-width:600px">Submit your property for confidential review. We handle marketing, buyer qualification, and negotiation.</p>
+            <a href="submit-listing.html" class="cta-btn">List Your Mine →</a>
+            <a href="buyer-request.html" class="cta-btn">I'm a Buyer →</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>www.sellbuygoldmine.com | Email: <a href="mailto:goldonearth@proton.me">goldonearth@proton.me</a></p>
+        <p style="margin-top:0.5rem;opacity:0.6;font-size:0.75rem">© 2026 SellBuyGoldMine. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        function filterListings() {
+            const region = document.getElementById('regionFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            const search = document.getElementById('searchFilter').value.toLowerCase();
+            const cards = document.querySelectorAll('.listing-card');
+            
+            cards.forEach(card => {
+                const cardRegion = card.getAttribute('data-region');
+                const cardStatus = card.getAttribute('data-status');
+                const cardText = card.textContent.toLowerCase();
+                
+                const regionMatch = region === 'all' || cardRegion === region;
+                const statusMatch = status === 'all' || cardStatus === status;
+                const searchMatch = cardText.includes(search);
+                
+                if (regionMatch && statusMatch && searchMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
