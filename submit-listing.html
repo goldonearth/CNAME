@@ -8,19 +8,29 @@
     <link rel="canonical" href="https://www.sellbuygoldmine.com/submit-listing">
     
     <style>
-        :root { --gold-primary: #D4AF37; --gold-secondary: #B8962E; --dark-bg: #0A0A0A; --dark-card: #141414; --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --border-subtle: #2A2A2A; }
+        :root {
+            --gold-primary: #D4AF37; --gold-secondary: #B8962E;
+            --dark-bg: #0A0A0A; --dark-card: #141414;
+            --text-primary: #FFFFFF; --text-secondary: #B8B8B8;
+            --border-subtle: #2A2A2A;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
         h1, h2 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
         a { color: var(--gold-primary); text-decoration: none; }
-        svg { max-width: 100%; height: auto; display: block; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
         .logo span { color: var(--text-primary); }
         .nav-links { display: flex; gap: 1.5rem; }
         .nav-links a { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; }
         .mobile-menu-btn { display: none; background: none; border: none; color: var(--gold-primary); font-size: 1.5rem; }
-        @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-card); flex-direction: column; padding: 1rem; } .nav-links.active { display: flex; } .mobile-menu-btn { display: block; } }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-card); flex-direction: column; padding: 1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+        
         .container { max-width: 700px; margin: 0 auto; padding: 2rem 5%; margin-top: 80px; }
         .page-header { text-align: center; margin-bottom: 2rem; }
         .form-card { background: var(--dark-card); padding: 2rem; border: 1px solid var(--border-subtle); border-radius: 4px; margin: 2rem 0; }
@@ -29,8 +39,8 @@
         input, textarea, select { width: 100%; padding: 1rem; background: var(--dark-bg); border: 1px solid var(--border-subtle); color: var(--text-primary); border-radius: 2px; }
         input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); }
         .submit-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary)); color: var(--dark-bg); padding: 1rem 2rem; border: none; font-weight: 600; cursor: pointer; width: 100%; border-radius: 2px; }
-        .info-box { background: rgba(212,175,55,0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; margin: 1.5rem 0; }
-        footer { padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); margin-top: 3rem; }
+        .info-box { background: rgba(212,175,55,0.1); border-left: 3px solid var(--gold-primary); padding: 1.5rem; margin: 1.5rem 0; }
+        footer { padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border-subtle); color: var(--text-muted); margin-top: 3rem; }
     </style>
 </head>
 <body>
@@ -40,8 +50,8 @@
         <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="listings.html">Listings</a>
-            <a href="how-to-sell.html">Sell</a>
-            <a href="how-to-buy.html">Buy</a>
+            <a href="submit-listing.html">Sell</a>
+            <a href="buyer-request.html">Buy</a>
             <a href="index.html#contact">Contact</a>
         </div>
     </nav>
@@ -49,24 +59,7 @@
     <div class="container">
         <div class="page-header">
             <h1>List Your Gold Mine for Sale</h1>
-            <p style="color:var(--text-secondary)">Confidentially submit your mining asset for sale. Your contact information is protected.</p>
-            
-            <!-- SVG HERO IMAGE -->
-            <svg width="800" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0;">
-              <defs>
-                <linearGradient id="submitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#B8962E;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#8B7508;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <rect width="800" height="300" fill="url(#submitGradient)"/>
-              <g transform="translate(400, 150)">
-                <path d="M -60,-80 L 60,40 M -40,-60 L 40,20" stroke="#0A0A0A" stroke-width="8" fill="none" stroke-linecap="round"/>
-                <circle cx="0" cy="0" r="15" fill="#0A0A0A"/>
-              </g>
-              <text x="50%" y="250" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#0A0A0A" text-anchor="middle">Confidential Listing</text>
-            </svg>
+            <p style="color:var(--text-secondary)">Confidentially submit your mining asset for sale. Your contact information is protected and only visible to verified buyers through our brokerage.</p>
         </div>
         
         <div class="info-box">
@@ -163,7 +156,9 @@
     </footer>
     
     <script>
-        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
     </script>
 </body>
 </html>
