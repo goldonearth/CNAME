@@ -20,12 +20,12 @@
     </script>
     
     <style>
-        :root { --gold-primary: #D4AF37; --dark-bg: #0A0A0A; --dark-card: #141414; --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --border-subtle: #2A2A2A; }
+        :root { --gold-primary: #D4AF37; --gold-secondary: #B8962E; --dark-bg: #0A0A0A; --dark-card: #141414; --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --border-subtle: #2A2A2A; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
         a { color: var(--gold-primary); text-decoration: none; }
-        img { max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0; }
+        svg { max-width: 100%; height: auto; display: block; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); }
         .logo span { color: var(--text-primary); }
@@ -71,7 +71,26 @@
         <div class="page-header">
             <h1>How to Sell Your Gold Mine</h1>
             <p>Complete Guide to Maximizing Value in 2026</p>
-            <img src="https://images.unsplash.com/photo-1518709414768-a88985a645f7?auto=format&fit=crop&q=80&w=1200" alt="Gold mine operations">
+            
+            <!-- SVG HERO IMAGE -->
+            <svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0;">
+              <defs>
+                <linearGradient id="htsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#B8962E;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#8B7508;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect width="1200" height="600" fill="url(#htsGradient)"/>
+              <polygon points="0,600 200,300 400,600" fill="#0A0A0A" opacity="0.3"/>
+              <polygon points="300,600 550,250 800,600" fill="#0A0A0A" opacity="0.4"/>
+              <polygon points="700,600 950,280 1200,600" fill="#0A0A0A" opacity="0.3"/>
+              <g transform="translate(600, 250)">
+                <path d="M -60,-80 L 60,40 M -40,-60 L 40,20" stroke="#0A0A0A" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <circle cx="0" cy="0" r="15" fill="#0A0A0A"/>
+              </g>
+              <text x="50%" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#0A0A0A" text-anchor="middle">Sell Your Gold Mine</text>
+            </svg>
         </div>
         
         <div class="content-section">
@@ -84,78 +103,6 @@
                 • Average time to sell exploration property: 12-24 months<br>
                 • Typical broker commission: 2-5% of sale price<br>
                 • Mines sold through brokers achieve 15-30% higher prices
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 1: Understanding Your Mine's Value</h2>
-            <img src="https://images.unsplash.com/photo-1621905272078-e7a84a289e4f?auto=format&fit=crop&q=80&w=1200" alt="Mining exploration and drilling">
-            
-            <h3>Valuation Methods for Gold Mines</h3>
-            <ol>
-                <li><strong>Income Approach (DCF Analysis):</strong> Projects future cash flows based on reserves, production rates, gold prices, and operating costs. Most reliable for producing mines.</li>
-                <li><strong>Market Approach (Comparables):</strong> Analyzes recent sales of similar mines in comparable jurisdictions. Requires access to transaction databases.</li>
-                <li><strong>Asset Approach:</strong> Values tangible assets (equipment, infrastructure) plus mineral rights. Used for exploration properties without proven reserves.</li>
-                <li><strong>Resource-Based Valuation:</strong> Values based on ounces in the ground (e.g., $50-$500 per ounce depending on resource category and jurisdiction).</li>
-            </ol>
-            
-            <h3>Key Value Drivers</h3>
-            <ul>
-                <li><strong>Reserve Quality:</strong> Proven & Probable reserves command premium valuations vs. Inferred resources</li>
-                <li><strong>Grade:</strong> Higher grade mines (5+ g/t) worth significantly more than low-grade operations</li>
-                <li><strong>Infrastructure:</strong> Road access, power, water, and processing facilities add substantial value</li>
-                <li><strong>Permitting Status:</strong> Permitted mines worth 2-3x more than unpermitted properties</li>
-                <li><strong>Jurisdiction:</strong> Political stability, mining-friendly regulations, and tax regimes affect valuations by 30-50%</li>
-                <li><strong>Production History:</strong> Consistent production with low costs increases buyer confidence</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 2: Preparing Your Mine for Sale</h2>
-            
-            <h3>Essential Documentation</h3>
-            <ul>
-                <li><strong>Technical Reports:</strong> NI 43-101 or JORC compliant resource/reserve estimates</li>
-                <li><strong>Geological Data:</strong> Drill logs, assay results, geological maps, cross-sections</li>
-                <li><strong>Legal Documents:</strong> Mining claims, land titles, water rights, easements</li>
-                <li><strong>Permits & Approvals:</strong> Environmental permits, mining permits, water use permits</li>
-                <li><strong>Financial Records:</strong> Production costs, revenue history, capital expenditures, tax filings</li>
-                <li><strong>Environmental Studies:</strong> Baseline studies, impact assessments, reclamation plans</li>
-                <li><strong>Infrastructure Details:</strong> Road access, power supply, water sources, facilities</li>
-            </ul>
-            
-            <h3>Address Liabilities Before Marketing</h3>
-            <ul>
-                <li>Environmental compliance violations</li>
-                <li>Outstanding royalties or production payments</li>
-                <li>Land access disputes</li>
-                <li>Water rights conflicts</li>
-                <li>Community or Indigenous consultation issues</li>
-                <li>Equipment maintenance backlogs</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 3: Finding Qualified Buyers</h2>
-            
-            <h3>Types of Gold Mine Buyers</h3>
-            <div class="region-grid">
-                <div class="region-card">
-                    <h3>🏢 Major Mining Companies</h3>
-                    <p>Seek producing mines or advanced development projects. Typically pay premium prices but require extensive due diligence.</p>
-                </div>
-                <div class="region-card">
-                    <h3>📈 Mid-Tier Producers</h3>
-                    <p>Looking to increase production or extend mine life. Often the best fit for producing mines in the $50M-$500M range.</p>
-                </div>
-                <div class="region-card">
-                    <h3>🔍 Junior Explorers</h3>
-                    <p>Seek exploration properties or early-stage development projects. May structure deals with earn-ins or royalties.</p>
-                </div>
-                <div class="region-card">
-                    <h3>💰 Private Equity</h3>
-                    <p>Financial buyers seeking cash-flowing assets. Focus on IRR and exit strategies. Can close quickly.</p>
-                </div>
             </div>
         </div>
         
@@ -259,69 +206,6 @@
                     <a href="sell-russia.html">Russia Selling Guide →</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 4: Marketing Your Mine Confidentially</h2>
-            
-            <h3>Confidentiality is Critical</h3>
-            <p>Public knowledge of a mine sale can:</p>
-            <ul>
-                <li>Alert competitors who may poach key employees</li>
-                <li>Concern local communities and regulators</li>
-                <li>Affect supplier and contractor relationships</li>
-                <li>Impact stock price (if publicly traded)</li>
-            </ul>
-            
-            <h3>Marketing Strategy</h3>
-            <ol>
-                <li><strong>Confidential Teaser:</strong> One-page summary without revealing mine identity</li>
-                <li><strong>Qualified Buyer List:</strong> Target 15-25 serious potential buyers</li>
-                <li><strong>NCNDA Execution:</strong> Non-Circumvention, Non-Disclosure Agreement before sharing details</li>
-                <li><strong>Confidential Information Memorandum (CIM):</strong> Comprehensive 30-50 page marketing document</li>
-                <li><strong>Data Room:</strong> Secure online repository for due diligence documents</li>
-                <li><strong>Site Visits:</strong> Controlled access for serious buyers only</li>
-            </ol>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 5: Negotiating the Best Deal</h2>
-            
-            <h3>Deal Structure Options</h3>
-            <div class="info-box">
-                <strong>Common Transaction Structures:</strong><br><br>
-                <strong>100% Cash Sale:</strong> Cleanest structure, immediate liquidity. Typical for producing mines.<br><br>
-                <strong>Earn-In Agreement:</strong> Buyer earns ownership by spending on exploration/development. Common for exploration properties.<br><br>
-                <strong>Royalty + Cash:</strong> Lower upfront payment + 1-3% NSR royalty. Provides ongoing revenue.<br><br>
-                <strong>Equity Component:</strong> Part cash + part buyer's stock. Aligns interests if you believe in their upside.<br><br>
-                <strong>Vendor Financing:</strong> You finance part of the purchase price. Higher total price but carries risk.
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 6: Due Diligence & Closing</h2>
-            
-            <h3>Buyer Due Diligence Checklist</h3>
-            <p>Expect buyers to verify:</p>
-            <ul>
-                <li>Geological data and resource estimates (independent technical review)</li>
-                <li>Legal title and claim validity</li>
-                <li>Environmental compliance and liabilities</li>
-                <li>Permit validity and transferability</li>
-                <li>Infrastructure condition and capacity</li>
-                <li>Financial records and tax compliance</li>
-                <li>Community and stakeholder relationships</li>
-                <li>Equipment condition and maintenance records</li>
-            </ul>
-            
-            <h3>Closing Timeline</h3>
-            <ul>
-                <li><strong>Letter of Intent (LOI):</strong> 2-4 weeks after initial interest</li>
-                <li><strong>Due Diligence:</strong> 60-120 days (longer for complex properties)</li>
-                <li><strong>Definitive Agreement:</strong> 30-60 days after due diligence</li>
-                <li><strong>Regulatory Approvals:</strong> 30-180 days depending on jurisdiction</li>
-                <li><strong>Closing:</strong> Final transfer of ownership and funds</li>
-            </ul>
         </div>
         
         <div class="cta-box">

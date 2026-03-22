@@ -20,12 +20,12 @@
     </script>
     
     <style>
-        :root { --gold-primary: #D4AF37; --dark-bg: #0A0A0A; --dark-card: #141414; --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --border-subtle: #2A2A2A; }
+        :root { --gold-primary: #D4AF37; --gold-secondary: #B8962E; --dark-bg: #0A0A0A; --dark-card: #141414; --text-primary: #FFFFFF; --text-secondary: #B8B8B8; --border-subtle: #2A2A2A; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.7; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
         a { color: var(--gold-primary); text-decoration: none; }
-        img { max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0; }
+        svg { max-width: 100%; height: auto; display: block; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 700; color: var(--gold-primary); }
         .logo span { color: var(--text-primary); }
@@ -71,12 +71,45 @@
         <div class="page-header">
             <h1>How to Buy a Gold Mine</h1>
             <p>Expert Investment Guide for 2026</p>
-            <img src="https://images.unsplash.com/photo-1579547674829-6f30809c6b6e?auto=format&fit=crop&q=80&w=1200" alt="Gold mining investment">
+            
+            <!-- SVG HERO IMAGE -->
+            <svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0;">
+              <defs>
+                <linearGradient id="htbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#B8962E;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#8B7508;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect width="1200" height="600" fill="url(#htbGradient)"/>
+              <g transform="translate(600, 250)">
+                <circle cx="0" cy="0" r="100" fill="#0A0A0A" opacity="0.3"/>
+                <text x="0" y="10" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#D4AF37" text-anchor="middle">$</text>
+              </g>
+              <text x="50%" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#0A0A0A" text-anchor="middle">Gold Mine Investment Guide</text>
+            </svg>
         </div>
         
         <div class="content-section">
             <h2>Why Gold Mine Investments Require Expertise</h2>
             <p>Buying a gold mine is a complex investment that requires technical knowledge, financial capacity, and thorough due diligence. Unlike traditional real estate or stock investments, mining assets involve geological risks, regulatory complexities, and operational challenges that demand specialized expertise.</p>
+            
+            <!-- SVG CONTENT IMAGE -->
+            <svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0;">
+              <defs>
+                <linearGradient id="htbContent" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#1E1E1E;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect width="1200" height="600" fill="url(#htbContent)"/>
+              <rect x="200" y="350" width="100" height="150" fill="#D4AF37" opacity="0.8"/>
+              <rect x="350" y="300" width="100" height="200" fill="#D4AF37" opacity="0.9"/>
+              <rect x="500" y="220" width="100" height="280" fill="#D4AF37"/>
+              <rect x="650" y="280" width="100" height="220" fill="#D4AF37" opacity="0.9"/>
+              <rect x="800" y="320" width="100" height="180" fill="#D4AF37" opacity="0.8"/>
+              <text x="50%" y="550" font-family="Arial, sans-serif" font-size="36" fill="#D4AF37" text-anchor="middle">Investment Due Diligence</text>
+            </svg>
             
             <div class="info-box">
                 <strong>Investment Considerations:</strong><br>
@@ -85,43 +118,6 @@
                 • Due diligence period: 60-180 days<br>
                 • Typical ROI: 15-25% IRR for producing mines
             </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 1: Define Your Investment Strategy</h2>
-            <img src="https://images.unsplash.com/photo-1621905272078-e7a84a289e4f?auto=format&fit=crop&q=80&w=1200" alt="Mining investment strategy">
-            
-            <h3>Types of Mining Investments</h3>
-            <ol>
-                <li><strong>Exploration Properties:</strong> High risk, high reward. Early-stage projects with resource potential.</li>
-                <li><strong>Development Projects:</strong> Permitted mines ready for construction. Moderate risk.</li>
-                <li><strong>Producing Mines:</strong> Cash-flowing operations. Lower risk, stable returns.</li>
-                <li><strong>Royalty/Streaming:</strong> Passive income from existing operations.</li>
-            </ol>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 2: Due Diligence Checklist</h2>
-            
-            <h3>Technical Due Diligence</h3>
-            <ul>
-                <li>Independent geological review (NI 43-101 or JORC compliant)</li>
-                <li>Reserve/resource verification</li>
-                <li>Metallurgical testing and recovery rates</li>
-                <li>Mine plan and production schedule review</li>
-                <li>Infrastructure assessment (power, water, roads)</li>
-                <li>Equipment condition and maintenance records</li>
-            </ul>
-            
-            <h3>Legal & Regulatory</h3>
-            <ul>
-                <li>Mining claim validity and title search</li>
-                <li>Permit status and transferability</li>
-                <li>Environmental compliance history</li>
-                <li>Water rights and land access</li>
-                <li>Community and Indigenous agreements</li>
-                <li>Tax obligations and royalties</li>
-            </ul>
         </div>
         
         <div class="content-section">
@@ -224,66 +220,6 @@
                     <a href="buy-russia.html">Russia Buying Guide →</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 3: Financing Your Acquisition</h2>
-            
-            <h3>Common Financing Structures</h3>
-            <div class="region-grid">
-                <div class="region-card">
-                    <h3>💵 All-Cash Purchase</h3>
-                    <p>Cleanest structure, fastest closing. Requires significant capital but avoids debt service.</p>
-                </div>
-                <div class="region-card">
-                    <h3>🏦 Bank Financing</h3>
-                    <p>Traditional debt financing. Typically 50-70% LTV for producing mines.</p>
-                </div>
-                <div class="region-card">
-                    <h3>🤝 Vendor Financing</h3>
-                    <p>Seller finances portion of purchase. Higher total price but preserves capital.</p>
-                </div>
-                <div class="region-card">
-                    <h3>📊 Equity Partners</h3>
-                    <p>Joint venture or private equity. Shares risk and expertise.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 4: Negotiating the Best Deal</h2>
-            
-            <h3>Deal Structure Options</h3>
-            <div class="info-box">
-                <strong>Common Transaction Structures:</strong><br><br>
-                <strong>100% Cash Sale:</strong> Cleanest structure, immediate liquidity.<br><br>
-                <strong>Earn-In Agreement:</strong> Buyer earns ownership by spending on exploration/development.<br><br>
-                <strong>Royalty + Cash:</strong> Lower upfront payment + 1-3% NSR royalty.<br><br>
-                <strong>Equity Component:</strong> Part cash + part buyer's stock.<br><br>
-                <strong>Vendor Financing:</strong> Seller finances portion of purchase price.
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h2>Step 5: Closing & Integration</h2>
-            
-            <h3>Closing Timeline</h3>
-            <ul>
-                <li><strong>Letter of Intent (LOI):</strong> 2-4 weeks after initial interest</li>
-                <li><strong>Due Diligence:</strong> 60-180 days (longer for complex properties)</li>
-                <li><strong>Definitive Agreement:</strong> 30-60 days after due diligence</li>
-                <li><strong>Regulatory Approvals:</strong> 30-180 days depending on jurisdiction</li>
-                <li><strong>Closing:</strong> Final transfer of ownership and funds</li>
-            </ul>
-            
-            <h3>Post-Acquisition Integration</h3>
-            <ul>
-                <li>Operational transition planning</li>
-                <li>Key employee retention</li>
-                <li>Community relationship management</li>
-                <li>Regulatory compliance maintenance</li>
-                <li>Financial reporting integration</li>
-            </ul>
         </div>
         
         <div class="cta-box">
